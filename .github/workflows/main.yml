@@ -40,7 +40,10 @@ jobs:
         run: curl http://localhost:6080
 
       - name: Install App using ADB
-        run: adb install -r -g app-debug.apk
+        run: |
+          ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+          brew cask install android-platform-tools 
+          adb install -r -g app-debug.apk
 
       - name: Install Selenium client
         run: pip install -U selenium Appium-Python-Client
