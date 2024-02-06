@@ -1,4 +1,4 @@
-import unittest
+import unittest, os
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from appium.webdriver.common.appiumby import AppiumBy
@@ -11,7 +11,7 @@ capabilities = dict(
     appActivity='me.rafliher.gawai2_4.MainActivity',
     language='en',
     locale='US',
-    app="app-debug.apk"
+    app=f'{os.getcwd()}/app-debug.apk'
 )
 
 appium_server_url = 'http://localhost:4723'
