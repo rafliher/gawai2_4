@@ -40,7 +40,7 @@ jobs:
         run: curl http://localhost:6080
 
       - name: Install Selenium client
-        run: pip install -U selenium pytest pytest-xdist
+        run: pip install -U selenium pytest pytest-xdist Appium-Python-Client
 
       - name: Run tests using pytest
         run: |
