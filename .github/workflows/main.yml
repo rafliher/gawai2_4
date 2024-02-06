@@ -41,8 +41,9 @@ jobs:
 
       - name: Install App using ADB
         run: |
-          ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-          brew cask install android-platform-tools 
+          sudo add-apt-repository ppa:nilarimogard/webupd8
+          sudo apt-get update -y
+          sudo apt-get install android-tools-adb android-tools-fastboot -y
           adb install -r -g app-debug.apk
 
       - name: Install Selenium client
