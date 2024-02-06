@@ -11,7 +11,6 @@ capabilities = dict(
     appActivity='me.rafliher.gawai2_4.MainActivity',
     language='en',
     locale='US',
-    app=f'{os.getcwd()}/app-debug.apk'
 )
 
 appium_server_url = 'http://localhost:4723'

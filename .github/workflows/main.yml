@@ -39,6 +39,9 @@ jobs:
       - name: Check the vnc
         run: curl http://localhost:6080
 
+      - name: Install App using ADB
+        run: adb install -r -g app-debug.apk
+
       - name: Install Selenium client
         run: pip install -U selenium Appium-Python-Client
 
