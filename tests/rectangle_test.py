@@ -27,7 +27,7 @@ class TestCalculator(unittest.TestCase):
     def test_triangle(self):
         self.driver.implicitly_wait(5)
 
-        self.driver.find_element(by=AppiumBy.ID, value='me.rafliher.gawai2_4:id/buttonRectangle').click()
+        self.driver.find_element(by=AppiumBy.ID, value='me.rafliher.gawai2_4:id/buttonTriangle').click()
 
         txtPanjang = self.driver.find_element(by=AppiumBy.ID, value='me.rafliher.gawai2_4:id/txtPanjang')
         txtLebar = self.driver.find_element(by=AppiumBy.ID, value='me.rafliher.gawai2_4:id/txtLebar')
@@ -44,7 +44,7 @@ class TestCalculator(unittest.TestCase):
 
                 button.click()
 
-                expected_result = '{:.1f}'.format((i * j) / 2)
+                expected_result = str((i * j) / 2)
 
                 self.driver.implicitly_wait(2)
                 actual_result = txtHasil.text
