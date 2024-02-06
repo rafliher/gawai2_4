@@ -33,11 +33,11 @@ jobs:
       - name: Setup Appium
         run: docker run -d -p 6080:6080 -p 4723:4723 -p 5554:5554 -p 5555:5555 -e EMULATOR_DEVICE="Samsung Galaxy S10" -e WEB_VNC=true -e APPIUM=true --device /dev/kvm --name android-container budtmo/docker-android:emulator_14.0
 
-      - name: Wait for Selenium Hub
+      - name: Wait for docker
         run: sh wait.sh
 
-      - name: Check the Hub
-        run: curl http://localhost:4444/ui
+      - name: Check the vnc
+        run: curl http://localhost:6080
 
       - name: Install Selenium client
         run: pip install -U selenium pytest pytest-xdist
